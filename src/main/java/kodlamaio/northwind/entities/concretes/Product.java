@@ -5,7 +5,7 @@ import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-//
+//2.commit için
 //jpa alt yapısını kullanmamızı sağlıyor
 @Entity
 @Table(name="products")
