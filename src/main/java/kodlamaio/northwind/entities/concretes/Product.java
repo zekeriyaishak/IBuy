@@ -5,7 +5,6 @@ import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-//2.commit için
 //jpa alt yapısını kullanmamızı sağlıyor
 @Entity
 @Table(name="products")
@@ -26,8 +25,8 @@ public class Product {
     @Column(name="product_id")
     private int id; // id numarası
 
-    @Column(name="category_id")
-    private int categoryId; // category numarası
+    //@Column(name="category_id") //aşağıdaki ilişki sayesinde yorum satırına aldık
+    //private int categoryId; // category numarası
 
     @Column(name="product_name")
     private String productName; // ürün ismi
@@ -41,6 +40,10 @@ public class Product {
     @Column(name="quantity_per_unit")
     private String quantityPerUnit; // bir birimde kaç tane var 6 lı kola da kac tane var gibi
 
+    //İlişkisi olan tabloyla kodladık
+    @ManyToOne()
+    @JoinColumn(name = "category_id")
+    private Category category; //productın category'si nedirözelliği olcak
 
 
 
