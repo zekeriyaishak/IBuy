@@ -25,7 +25,7 @@ public class Product {
     @Column(name="product_id")
     private int id; // id numarası
 
-    //@Column(name="category_id") //aşağıdaki ilişki sayesinde yorum satırına aldık
+    //@Column(name="category_id")
     //private int categoryId; // category numarası
 
     @Column(name="product_name")

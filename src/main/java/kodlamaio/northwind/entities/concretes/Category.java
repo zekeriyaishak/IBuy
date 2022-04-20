@@ -1,5 +1,6 @@
 package kodlamaio.northwind.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name="categories")
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","products"}) //sana söylediğim kadar mapping yap, verdiğim kadar sorgu yap // sürekli datayı tekrar tekrar getirmemizi sağlar
 public class Category {
     @Id
     @Column(name="category_id")
@@ -22,6 +24,6 @@ public class Category {
 
     //ilişkilendirmeyi veriyoruz
     //ana yerde bir kere geçer diğer tabloda bir çok kere geçebilir
-    @OneToMany(mappedBy = "categories")
+    @OneToMany(mappedBy = "category")
     private List<Product> products; //kategorinin ürünleri
 }
